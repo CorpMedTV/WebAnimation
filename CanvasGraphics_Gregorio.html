@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Canvas Graphics</title>
+<style>
+    .canvas-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    canvas {
+        border: 1px solid black;
+        margin: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="canvas-container">
+    <canvas id="canvas1" width="200" height="200"></canvas>
+    <canvas id="canvas2" width="200" height="200"></canvas>
+    <canvas id="canvas3" width="200" height="200"></canvas>
+    <canvas id="canvas4" width="200" height="200"></canvas>
+    <canvas id="canvas5" width="200" height="200"></canvas>
+    <canvas id="canvas6" width="200" height="200"></canvas>
+    <canvas id="canvas7" width="200" height="200"></canvas>
+    <canvas id="canvas8" width="200" height="200"></canvas>
+</div>
+
+<script>
+    function drawCanvas1() {
+        var canvas = document.getElementById('canvas1');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'green';
+        ctx.fillRect(10, 10, 180, 180);
+    }
+
+    function drawCanvas2() {
+        var canvas = document.getElementById('canvas2');
+        var ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.arc(100, 100, 90, 0, 2 * Math.PI);
+        ctx.stroke();
+    }
+
+    function drawCanvas3() {
+        var canvas = document.getElementById('canvas3');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'blue';
+        ctx.beginPath();
+        ctx.moveTo(100, 10);
+        ctx.lineTo(190, 190);
+        ctx.lineTo(10, 190);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    function drawCanvas4() {
+        var canvas = document.getElementById('canvas4');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'red';
+        ctx.fillRect(50, 50, 100, 100);
+        ctx.clearRect(75, 75, 50, 50);
+    }
+
+    function drawCanvas5() {
+        var canvas = document.getElementById('canvas5');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'yellow';
+        ctx.beginPath();
+        ctx.moveTo(100, 10);
+        ctx.lineTo(10, 190);
+        ctx.lineTo(190, 190);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    function drawCanvas6() {
+        var canvas = document.getElementById('canvas6');
+        var ctx = canvas.getContext('2d');
+        ctx.strokeStyle = 'purple';
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        ctx.moveTo(10, 10);
+        ctx.lineTo(190, 10);
+        ctx.lineTo(190, 190);
+        ctx.lineTo(10, 190);
+        ctx.closePath();
+        ctx.stroke();
+    }
+
+    function drawCanvas7() {
+        var canvas = document.getElementById('canvas7');
+        var ctx = canvas.getContext('2d');
+        ctx.strokeStyle = 'orange';
+        ctx.lineWidth = 10;
+        ctx.strokeRect(10, 10, 180, 180);
+    }
+
+    function drawCanvas8() {
+        var canvas = document.getElementById('canvas8');
+        var ctx = canvas.getContext('2d');
+        ctx.strokeStyle = 'black';
+        ctx.beginPath();
+        ctx.moveTo(10, 100);
+        for (let i = 10; i <= 190; i += 10) {
+            ctx.lineTo(i, i % 20 === 0 ? 90 : 110);
+        }
+        ctx.stroke();
+    }
+
+    window.onload = function() {
+        drawCanvas1();
+        drawCanvas2();
+        drawCanvas3();
+        drawCanvas4();
+        drawCanvas5();
+        drawCanvas6();
+        drawCanvas7();
+        drawCanvas8();
+    };
+</script>
+
+</body>
+</html>
